@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        a{
+            text-decoration: none;
+            font-size: large;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<ul>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="#">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+</ul>
+<body>
+
+
+    <script>
+       let student_score={
+        studentName:['james','john','gold','divine','peculiar'],
+        subject:{
+            james:{
+                eng:60,
+                maths:60,
+                civic:60,
+                grade:"A"
+            },
+            john:{
+                eng:60,
+                maths:60,
+                civic:60,
+                grade:"A"
+            },
+            gold:{
+                eng:60,
+                maths:60,
+                civic:60,
+                grade:"A"
+            },
+            divine:{
+                eng:60,
+                maths:60,
+                civic:60,
+                grade:"A"
+            },
+            peculiar:{
+                eng:60,
+                maths:60,
+                civic:60,
+                grade:"A"
+            }
+        }
+    }
+
+       alert(`I have five students in my class: ${student_score.studentName[0]}, ${student_score.studentName[1]},${student_score.studentName[2]},${student_score.studentName[3]},${student_score.studentName[4]}
+       ${student_score.studentName[0]} scored: .english: ${student_score.subject.james.eng} -maths: ${student_score.subject.james.maths}
+       civic: ${student_score.subject.james.civic} -grade :${student_score.subject.james.grade}
+        ${student_score.studentName[1]} scored: .english: ${student_score.subject.john.eng} -maths: ${student_score.subject.john.maths}
+       civic: ${student_score.subject.john.civic} -grade: ${student_score.subject.john.grade}
+       ${student_score.studentName[2]} scored: .english: ${student_score.subject.gold.eng} -maths: ${student_score.subject.gold.maths}
+       civic: ${student_score.subject.gold.civic}-grade: ${student_score.subject.gold.grade} 
+       ${student_score.studentName[3]} scored: .english: ${student_score.subject.divine.eng} -maths: ${student_score.subject.divine.maths}
+       civic: ${student_score.subject.divine.civic} -grade: ${student_score.subject.divine.grade}
+       ${student_score.studentName[4]} scored: .english: ${student_score.subject.peculiar.eng} -maths: ${student_score.subject.peculiar.maths}
+       civic: ${student_score.subject.peculiar.civic} -grade: ${student_score.subject.peculiar.grade}`)
+
+    </script>
+</body>
+</html>
