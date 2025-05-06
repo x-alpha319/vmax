@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    margin: 20px;
+    background-color: aquamarine;
+}
