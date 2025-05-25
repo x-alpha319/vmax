@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .design{
+      background-color: blue;
+      height: 80vh;
+      width: 300px;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      padding-top: 30px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 30px;
+    }
+  </style>
+  <ul>
+    <li style="list-style-type: none;"><a href="new.html">Greetings</a></li>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="scores.html">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+    <li style="list-style-type: none;"><a href="#"></a></li>
+    <li style="list-style-type: none;"><a href="calculator2.html"></a></li>
+    <li style="list-style-type: none;"><a href="loan calculator.html"></a></li>
+    <li style="list-style-type: none;"><a href="ass.html"></a></li>
+    <li style="list-style-type: none;"><a href="ROI.html"></a></li>
+    <li style="list-style-type: none;"><a href="new2.html"></a></li>
+</ul>
+</head>
+<body>
+  <div class="design">
+  <h1>Loan calculator</h1>
+  <input type="text" class="amount" placeholder="how much"><br>
+    <select id="Years">
+    <option value="1">1 year</option>
+    <option value="2">2 years</option>
+    <option value="3">3 years</option>
+    <option value="3">4 years</option>
+    <option value="5">5 years</option>
+    <option value="6">6 years</option>
+    <option value="7">7 years</option>
+    <option value="8">8 years</option>
+  </select>
+  <br><br>
+  <p>Loan Interest: 15%</p>
+  <button onclick="LOAN()">Calculate</button>
+  <p class="answer"></p>
+</div>
+  <script>
+    function LOAN() {
+      //Amount
+      const Amount=document.querySelector('.amount');
+    const vAmount=Number(Amount.value);
+
+      //duration
+    const loanAmt=document.getElementById('Years');
+    const selectedYear=Number(loanAmt.value);
+
+    //interest
+    const interest=0.15*vAmount;
+    const tInterest=interest*selectedYear;
+
+    const mthAmount=selectedYear*12;
+    const amtPayedBack=tInterest+vAmount;
+    const mthRepayment=amtPayedBack/mthAmount;
+
+     //display answer
+     const theAnswer=document.querySelector('.answer');
+    theAnswer.innerHTML=(`You will pay us ₦${Math.ceil(mthRepayment)} monthly if you borrow ₦${vAmount} from us for ${selectedYear} year`)
+
+    // alert(Total interest after ${selectedYear} year(s) if ₦${vAmount} is borrowed is ₦${tInterest} \n Therefore you will pay us ₦${tInterest+vAmount} after ${selectedYear} years or pay us ₦${mthRepayment} monthly)
+    }
+  </script>
+
+</body>
+</html>

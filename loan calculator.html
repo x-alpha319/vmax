@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan calculator</title>
+    <link rel="stylesheet" href="loan calc.css">
+    <ul>
+    <li style="list-style-type: none;"><a href="new.html">Greetings</a></li>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="scores.html">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+    <li style="list-style-type: none;"><a href="calculator2.html">calculator</a></li>
+    <li style="list-style-type: none;"><a href="#">loan_calc</a></li>
+    <li style="list-style-type: none;"><a href="ass.html">var,let and const</a></li>
+    <li style="list-style-type: none;"><a href="ROI.html">Retun on investment</a></li>
+    <li style="list-style-type: none;"><a href="new2.html">retirement</a></li>
+</ul>
+<style>
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around;
+      /* align-items: start; */
+      text-align: center;
+      position: relative;
+      left: 10px;
+    }
+    @media screen and (max-width: 768px){
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: large;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="loan_calc">
+        <div class="glassmorphism">
+            <h2>Loan Calculator</h2>
+            <div>
+                <input type="number" id="display" placeholder="loaned amount">
+            </div>
+    
+            <div>
+                <select name="" id="duration">
+                    <option value="1">1 year</option>
+                    <option value="2">2 years</option>
+                    <option value="3">3 years</option>
+                    <option value="4">4 years</option>
+                    <option value="5">5 years</option>
+                    <option value="6">6 years</option>
+                    <option value="7">7 years</option>
+                    <option value="8">8 years</option>
+                    <option value="9">9 years</option>
+                    <option value="10">10 years</option>
+                </select>
+            </div>
+            <p>
+                Loan rate: 15%
+            </p>
+    
+            <div>
+                <button id="button">calculate</button>
+            </div>
+            <p id="body_text">you will be getting......</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById("button").addEventListener("click", function () {
+            const interestRate = 0.15;
+            const years = parseInt(document.getElementById("duration").value);
+            const loanAmount = parseFloat(document.getElementById("display").value);
+            const output = document.getElementById("body_text");
+
+            // Validate input
+            if (isNaN(loanAmount) || loanAmount <= 0) {
+                output.innerHTML = "Please enter a valid loan amount.";
+                return;
+            }
+
+            const totalInterest = loanAmount * interestRate * years;
+            const totalAmountToPay = loanAmount + totalInterest;
+            const totalMonths = years * 12;
+            const monthlyPayment = totalAmountToPay / totalMonths;
+
+            // Format values
+            const formattedMonthly = monthlyPayment.toLocaleString(undefined, {
+                maximumFractionDigits: 0
+            });
+            const formattedLoan = loanAmount.toLocaleString();
+
+            output.innerHTML = `You will pay <strong>₦${formattedMonthly}</strong> monthly if you borrow <strong>₦${formattedLoan}</strong> from us for <strong>${years}</strong> year${years > 1 ? "s" : ""}.`;
+        });
+    </script>
+
+
+    
+
+    
+</body>
+</html>

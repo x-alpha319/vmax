@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <ul>
+    <li style="list-style-type: none;"><a href="new.html">Greetings</a></li>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="scores.html">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+    <li style="list-style-type: none;"><a href="calculator2.html">calculator</a></li>
+    <li style="list-style-type: none;"><a href="loan calculator.html">loan_calc</a></li>
+    <li style="list-style-type: none;"><a href="ass.html">let,var and const</a></li>
+    <li style="list-style-type: none;"><a href="ROI.html">return on investment</a></li>
+    <li style="list-style-type: none;"><a href="#">retirement</a></li>
+</ul>
+  <style>
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around;
+      /* align-items: start; */
+      text-align: center;
+      position: relative;
+      left: 10px;
+    }
+    @media screen and (max-width: 768px){
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: large;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+    <script>
+
+        const now = new Date();
+        const currentYear = now.getFullYear()
+        const ageLim = 65
+
+
+        let UserYear = prompt('what year were you born')
+        let ebube = olamide(currentYear, UserYear)
+        let maxAge = retAge(ageLim, ebube);
+
+
+
+
+        function olamide(currentYear, UserYear) {
+            return currentYear - UserYear
+        }
+
+
+
+        function retAge(ageLim, ebube) {
+            return ageLim - ebube
+        }
+
+
+        console.log(`you are ${ebube} years old`)
+        // alert(`you ought to have retired ${maxAge} ago`)
+
+
+        if (maxAge == -1) {
+            let maxag = -1 * maxAge
+            alert(`You ought to have retired ${maxag} year ago`)
+        } else if (maxAge < -1) {
+            let maxag = -1 * maxAge
+            alert(`You ought to have retired ${maxag} years ago`)
+        } else if (maxAge == 0) {
+            alert(`You would be retiring this year`)
+        } else {
+            alert(`You would be retiring ${maxAge} years later`)
+        }
+    </script>
+</body>
+
+</html>

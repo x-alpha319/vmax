@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <ul>
+    <li style="list-style-type: none;"><a href="new.html">Greetings</a></li>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="scores.html">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+   <li style="list-style-type: none;"><a href="#">calculator</a></li>
+    <li style="list-style-type: none;"><a href="loan calculator.html">loan_calc</a></li>
+    <li style="list-style-type: none;"><a href="ass.html">let,var and const</a></li>
+    <li style="list-style-type: none;"><a href="ROI.html">return on investment</a></li>
+    <li style="list-style-type: none;"><a href="new2.html">retirement</a></li>
+</ul>
+<style>
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around;
+      /* align-items: start; */
+      text-align: center;
+    }
+    @media screen and (max-width: 768px){
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: large;
+      text-transform: uppercase;
+    }
+  </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator2.css">
+</head>
+<body>
+     <div id="calculator">
+        <input type="text" id="display" readonly>
+        <div id="buttons"></div>
+
+     </div>
+
+    <script src="calculator2.js"></script>
+</body>
+</html>

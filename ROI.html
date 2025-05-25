@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.O.I calculator</title>
+    <link rel="stylesheet" href="roi.css">
+</head>
+<ul>
+    <li style="list-style-type: none;"><a href="new.html">Greetings</a></li>
+    <li style="list-style-type: none;"><a href="about_me.html">About me</a></li>
+    <li style="list-style-type: none;"><a href="scores.html">Students_scores</a></li>
+    <li style="list-style-type: none;"><a href="index.html">history of java</a></li>
+    <li style="list-style-type: none;"><a href="calculator2.html">xalculator</a></li>
+    <li style="list-style-type: none;"><a href="loan calculator.html">loan_calc</a></li>
+    <li style="list-style-type: none;"><a href="ass.html">var,let and const</a></li>
+    <li style="list-style-type: none;"><a href="#">return on investment</a></li>
+    <li style="list-style-type: none;"><a href="new2.html">retirement</a></li>
+</ul>
+<style>
+   ul {
+      display: flex;
+      flex-direction: row;
+      justify-content:space-around;
+      /* align-items: start; */
+      text-align: center;
+      position: relative;
+      left: 10px;
+    }
+    @media screen and (max-width: 768px){
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    a {
+      text-decoration: none;
+      font-size: large;
+      text-transform: uppercase;
+    }
+  </style>
+<body>
+    <div class="container">
+        <div class="glassmorphism">
+            <h2>R.O.I Calculator</h2>
+            <div>
+                <input type="number" id="investmentAmnt">
+            </div>
+            <div>
+                <select name="" id="duration">
+                    <option value="1">1yr</option>
+                    <option value="2">2yrs</option>
+                    <option value="3">3yrs</option>
+                    <option value="4">4yrs</option>
+                    <option value="5">5yrs</option>
+                    <option value="6">6yrs</option>
+                    <option value="7">7yrs</option>
+                    <option value="8">8yrs</option>
+                    <option value="9">9yrs</option>
+                    <option value="10">10yrs</option>
+                </select><br><br><br>
+            </div>
+            <p>our monthly roi is 15%</p> <br><br><br>
+            <div>
+                <button id="btn"> Calculate R.O.I</button>
+            </div><br><br><br>
+    
+            <p id="withdrawalAmount">
+                you will be getting.......
+            </p>
+        </div>
+    </div>
+<script>
+    let button = document.getElementById("btn")
+
+    button.addEventListener("click",function(){
+        let investmentAmnt = Number(document.getElementById("investmentAmnt").value);
+        let duration = document.getElementById("duration").value;
+        let durationInMonth = duration*12
+        const roiRate= 15/100
+        let roiPerMonth = roiRate*investmentAmnt
+        let totalRoi =  durationInMonth*roiPerMonth;
+        let toWithdraw = totalRoi+investmentAmnt
+
+      let show  =  document.getElementById("withdrawalAmount")
+      show.innerHTML=`you will be withdrawing a total of ${toWithdraw}
+       if you invest ${investmentAmnt} with us for ${duration} year(s)`
+    })
+</script>
+
+
+
+</body>
+</html>
